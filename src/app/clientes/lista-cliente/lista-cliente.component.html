@@ -11,6 +11,7 @@
       <td (click)="onEdit(cliente)">{{ cliente.idade }}</td>
       <td (click)="onEdit(cliente)">{{ cliente.endereco }}</td>
       <td (click)="onEdit(cliente)">{{ cliente.cpf }}</td>
+      <td><a class="btn text-danger" (click)="onDelete(cliente.id)"><i class="fa fa-trash">apagar</i></a></td>
     </tr>
   </tbody>
 </table>

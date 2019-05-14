@@ -36,10 +36,11 @@ export class ClienteComponent implements OnInit {
   onSubmit(form:NgForm){
     let data = Object.assign({},form.value) ;
     delete data.id;
-    if(form.value.id = null)
+    if(form.value.id == null){
       this.firestore.collection("clientes").add(data)
-    else
+    }else{
       this.firestore.doc('clientes/'+form.value.id).update(data)
+    }
     this.resetForm()
     this.toastr.success("Dados enviados com sucesso", "clientes")
   }
