@@ -1,0 +1,28 @@
+<h1 class="diaplay-4">Registro de Clientes</h1>
+
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+
+   <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+  
+   <div class="form-group">
+        <input name="nomeCompleto" #nomeCompleto="ngModel" [(ngModel)]="service.formData.nomeCompleto" class="form-control" placeholder="Nome completo" required>
+        <div *ngIf="nomeCompleto.invalid && nomeCompleto.touched " class="validation-error">Este campo não pode estar em branco</div>
+    </div>
+    <div class="form-group">
+        <input name="idade" #idade="ngModel" [(ngModel)]="service.formData.idade" class="form-control" placeholder="idade">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <input name="endereco" #endereco="ngModel" [(ngModel)]="service.formData.endereco" class="form-control" placeholder="endereço">
+        </div>
+        <div class="form-group col-md-6">
+            <input name="cpf" #cpf="ngModel" [(ngModel)]="service.formData.cpf" class="form-control" placeholder="cpf">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">
+            ENVIAR
+        </button>
+    </div>
+
+</form>

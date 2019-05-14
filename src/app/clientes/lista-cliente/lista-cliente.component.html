@@ -1,0 +1,16 @@
+<table class="table table-hover">
+  <thead>
+    <th>nome</th>
+    <th>idade</th>
+    <th>endereço</th>
+    <th>cpf</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of list">
+      <td (click)="onEdit(cliente)">{{ cliente.nomeCompleto }}</td>
+      <td (click)="onEdit(cliente)">{{ cliente.idade }}</td>
+      <td (click)="onEdit(cliente)">{{ cliente.endereco }}</td>
+      <td (click)="onEdit(cliente)">{{ cliente.cpf }}</td>
+    </tr>
+  </tbody>
+</table>
